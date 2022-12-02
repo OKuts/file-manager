@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 
 const userName = getUser();
 console.log(`Welcome to the File Manager, ${getColorText(userName, userName !== "Anonymous" && outFlag.IMPORTANT)}!`)
+console.log('print commands and wait for results')
 
 rl.on('line', line => manager(line, rl))
 
