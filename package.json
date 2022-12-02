@@ -1,0 +1,13 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/OKuts/file-manager.git",
+  "author": "Ol_Kuts <kuts.ol.vas@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node index --username=kuts",
+    "try": "node index"
+  }
+}
