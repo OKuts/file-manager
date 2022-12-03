@@ -1,6 +1,7 @@
 import {getColorText, outFlag} from '../utils/getColorText.js'
 import {getCurrentDir, HOME_DIR, setDir} from '../utils/dirOperations.js';
 import path from 'path'
+import {ls} from "../commamds/ls.js";
 
 export const manager = async (line, rl) => {
   if (!line.trim()) {
@@ -12,6 +13,9 @@ export const manager = async (line, rl) => {
   const args = add.filter(el => el !== '')
 
   switch (command) {
+    case 'ls':
+      ls(getCurrentDir())
+      break
     case 'cd':
       setDir(path.resolve(getCurrentDir(), args[0]))
       break
