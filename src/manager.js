@@ -1,8 +1,8 @@
 import {getColorText, outFlag} from '../utils/getColorText.js'
 import {getCurrentDir, HOME_DIR, setDir} from '../utils/dirOperations.js'
 import path from 'path'
-import {ls} from "../commamds/ls.js"
-import {cat} from "../commamds/cat.js"
+import {ls, cat, add} from "../commamds/index.js"
+
 
 export const manager = async (line, rl) => {
   if (!line.trim()) {
@@ -10,21 +10,25 @@ export const manager = async (line, rl) => {
     return
   }
 
-  const [command, ...add] = line.trim().split(' ')
-  const args = add.filter(el => el !== '')
+  const [command, ...rest] = line.trim().split(' ')
+  const args = rest.filter(el => el !== '')
+  const currentDir = getCurrentDir()
 
   switch (command) {
+    case 'add':
+      add(path.resolve(currentDir, args[0]), args[0])
+      break
     case 'cat':
-        cat(path.resolve(getCurrentDir(), args[0]))
+      cat(path.resolve(currentDir, args[0]))
       break
     case 'ls':
-      await ls(getCurrentDir())
+      await ls(currentDir)
       break
     case 'cd':
-      setDir(path.resolve(getCurrentDir(), args[0]))
+      setDir(path.resolve(currentDir, args[0]))
       break
     case 'up':
-      setDir(path.resolve(getCurrentDir(), '..'))
+      setDir(path.resolve(currentDir, '..'))
       break
     case '.exit':
       rl.emit('close')
@@ -32,5 +36,5 @@ export const manager = async (line, rl) => {
     default:
       console.log(getColorText('Command error', outFlag.ERROR))
   }
-  console.log('You are currently in ', getCurrentDir(), HOME_DIR)
+  console.log('You are currently in ', currentDir, HOME_DIR)
 }
