@@ -1,11 +1,9 @@
 import  readline from 'node:readline'
 import { manager } from './src/manager.js'
-import { getUser } from './src/getUser.js'
-import { getColorText, outFlag } from "./utils/getColorText.js";
+import { getUser, getColorText, outFlag } from './src/utils/index.js'
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
 })
 
 const userName = getUser();
@@ -18,4 +16,3 @@ rl.on('close', () => {
   console.log(`Thank you for using File Manager, ${getColorText(userName,outFlag.IMPORTANT)}!`);
   process.exit()
 });
-

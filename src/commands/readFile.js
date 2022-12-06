@@ -1,7 +1,7 @@
 import {ReadStream} from 'fs'
 import {getColorText, outFlag} from "../utils/getColorText.js";
 
-export const cat = async (file) => {
+export const readFile = async (file) => {
   const stream = new ReadStream(file)
 
   stream.on('readable', () => {
