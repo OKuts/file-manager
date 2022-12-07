@@ -1,16 +1,16 @@
 import {getColorText, setDir, outFlag} from './utils/index.js'
-import {createFile, renameFile, readFile, copyFile, listDir, upDir} from './commands/index.js'
-
-const config = {
+import {createFile, renameFile, readFile, copyFile, listDir, upDir, moveFile, deleteFile} from './commands/index.js'
+export const config = {
   up: upDir,
   ls: listDir,
-  cp: (args) => copyFile(args),
-  cd: (args) => setDir(args),
-  rn: (args) => renameFile(args),
-  add: (args) => createFile(args),
-  cat: (args) => readFile(args),
+  cp: args => copyFile(args),
+  cd: args => setDir(args),
+  rn: args => renameFile(args),
+  add: args => createFile(args),
+  cat: args => readFile(args),
+  rm: args => deleteFile(args),
+  mv: args => moveFile(args),
 }
-
 export const manager = async (line, rl) => {
   if (!line.trim()) {
     console.log('print commands and wait for results')
