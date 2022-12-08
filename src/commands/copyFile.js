@@ -1,7 +1,7 @@
 import {copyFile as copy} from 'node:fs/promises'
 import {resolve, basename} from 'path'
 import {printCurrentlyIn, getCurrentDir, getColorText, outFlag} from '../utils/index.js'
-export const copyFile = async ([from, to]) => {
+export const copyFile = async (from, to) => {
   try {
     await copy(resolve(getCurrentDir(), from), resolve(to, basename(from)))
     printCurrentlyIn()

@@ -1,9 +1,10 @@
-import  readline from 'node:readline'
+import  readline from 'readline'
 import { manager } from './src/manager.js'
 import { getUser, getColorText, outFlag } from './src/utils/index.js'
 
 const rl = readline.createInterface({
   input: process.stdin,
+  output: process.stdout,
 })
 
 const userName = getUser();

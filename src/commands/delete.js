@@ -2,8 +2,9 @@ import {rm} from 'fs/promises'
 import {resolve} from 'path'
 import {getColorText, getCurrentDir, outFlag, printCurrentlyIn} from "../utils/index.js";
 
-export const deleteFile = async ([file]) => {
+export const deleteFile = async (file) => {
   try {
+    console.log()
     await rm(resolve(getCurrentDir(), file))
     printCurrentlyIn()
   } catch (e) {
