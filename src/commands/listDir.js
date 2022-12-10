@@ -1,10 +1,11 @@
 import { readdir } from 'fs/promises'
-import {outCurrentlyDir, getCurrentDir} from "../utils/index.js";
+import { resolve } from 'path'
+import {outCurrentlyDir} from '../utils/index.js'
 
 export const listDir = async () => {
   const fileNames = []
   const dirNames = []
-  const list = await readdir(getCurrentDir(), {withFileTypes: true})
+  const list = await readdir(resolve('.'), {withFileTypes: true})
 
   for (const file of list) {
     file.isDirectory()

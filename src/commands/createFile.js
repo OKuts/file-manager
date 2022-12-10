@@ -1,5 +1,5 @@
 import {open} from 'fs/promises'
-import {getColorText, getCurrentDir, outFlag, outCurrentlyDir} from '../utils/index.js'
+import {getColorText, outFlag, outCurrentlyDir} from '../utils/index.js'
 import {resolve} from 'path'
 
 export const createFile = async fileName => {

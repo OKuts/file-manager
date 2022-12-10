@@ -1,4 +1,5 @@
-import {getColorText, getCurrentDir, outFlag} from './index.js'
+import {resolve} from 'path'
+import {getColorText, outFlag} from './index.js'
 export const outCurrentlyDir = () => {
-  console.log('You are currently in', getColorText(getCurrentDir(), outFlag.IMPORTANT))
+  console.log('You are currently in', getColorText(resolve('.'), outFlag.IMPORTANT))
 }

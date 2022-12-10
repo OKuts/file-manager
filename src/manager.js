@@ -1,4 +1,4 @@
-import {outErrorCommandMessage} from './utils/index.js'
+import { outErrorCommandMessage } from './utils/index.js'
 import { commands } from './commands/index.js'
 
 export const manager = async (line, rl) => {

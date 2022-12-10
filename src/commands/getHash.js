@@ -1,7 +1,7 @@
 import {createHash} from 'crypto'
 import {resolve} from 'path'
 import {readFile} from 'fs/promises'
-import {outCurrentlyDir, outErrorCommandMessage} from "../utils/index.js";
+import {outCurrentlyDir, outErrorCommandMessage} from '../utils/index.js'
 export const getHash = async file => {
   try {
     const content = await readFile(resolve(file))
