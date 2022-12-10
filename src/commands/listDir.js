@@ -1,5 +1,5 @@
 import { readdir } from 'fs/promises'
-import {printCurrentlyIn, getCurrentDir} from "../utils/index.js";
+import {outCurrentlyDir, getCurrentDir} from "../utils/index.js";
 
 export const listDir = async () => {
   const fileNames = []
@@ -13,5 +13,5 @@ export const listDir = async () => {
   }
 
   console.table([...dirNames, ...fileNames])
-  printCurrentlyIn()
+  outCurrentlyDir()
 }

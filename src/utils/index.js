@@ -1,5 +1,6 @@
 export * from './dirOperations.js'
 export * from './getColorText.js'
 export * from './getUser.js'
-export * from './printCurrentlyIn.js'
+export * from './outCurrentlyDir.js'
+export * from './outErrorCommandMessage.js'
 

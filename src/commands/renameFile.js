@@ -1,10 +1,10 @@
 import {rename} from 'node:fs/promises'
-import {getColorText, outFlag, printCurrentlyIn} from '../utils/index.js'
+import {getColorText, outFlag, outCurrentlyDir} from '../utils/index.js'
 
 export const renameFile = async (oldFileName, newFileName) => {
   try {
     await rename(oldFileName, newFileName)
-    printCurrentlyIn()
+    outCurrentlyDir()
   } catch (e) {
     console.log(getColorText(e.message, outFlag.ERROR))
   }
