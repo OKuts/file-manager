@@ -20,10 +20,10 @@ export const commands = Object.freeze({
   decompress: args => decompress(...args),
 })
 
-export const osData = Object.freeze({
-  '--EOL': () => EOL === '\r\n' ? '\\r\\n' :  '\\n',
+export const osParams = Object.freeze({
+  '--EOL': () => EOL === '\r\n' ? '\\r\\n' : '\\n',
   '--homedir': () => homedir(),
-  '--cpus': () => cpus(),
+  '--cpus': () => JSON.stringify(cpus()),
   '--username': () => userInfo().username,
   '--architecture': () => machine(),
 })

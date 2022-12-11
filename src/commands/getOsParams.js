@@ -1,10 +1,10 @@
-import {osData} from './commands.js'
-import {outCurrentlyDir, outErrorCommandMessage} from '../utils/index.js'
+import {osParams} from './commands.js'
+import {getColorText, isParams, outCurrentlyDir, outFlag} from '../utils/index.js'
 export const getOsParams = arg => {
-  if (osData[arg]) {
-    console.log(osData[arg]())
+  if (osParams[arg]) {
+    console.log(getColorText(osParams[arg](), outFlag.SUCCESS))
     outCurrentlyDir()
   } else {
-    outErrorCommandMessage()
+    isParams([''], '--EOL | --cpus | --homedir | --username | --architecture')
   }
 }

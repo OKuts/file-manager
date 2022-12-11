@@ -1,7 +1,12 @@
 import {resolve} from 'path'
 
-import {outCurrentlyDir} from '../utils/index.js'
-export const setDir = (newDir) => {
-  process.chdir(resolve(newDir))
+import {getColorText, isParams, outCurrentlyDir, outFlag} from '../utils/index.js'
+export const setDir = async newDir => {
+  if (!isParams([newDir], 'path_to_directory')) return
+  try {
+    process.chdir(resolve(newDir))
+  } catch (err) {
+    console.log(getColorText('path is not correct', outFlag.ERROR))
+  }
   outCurrentlyDir(resolve('.'))
 }
