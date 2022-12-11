@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { setDir } from '../utils/index.js'
+import { setDir } from './index.js'
 export const upDir = () => {
   setDir(resolve('..'))
 }

@@ -1,9 +1,8 @@
 import {EOL, homedir, cpus, userInfo, machine} from 'os'
 import {
-  copy, createFile, deleteFile, getOsParams, listDir,
-  moveFile, readFile, renameFile, upDir, getHash
+  copy, createFile, deleteFile, getOsParams, listDir, getHash, setDir,
+  moveFile, readFile, renameFile, upDir, compress, decompress
 } from './index.js'
-import {setDir} from '../utils/index.js'
 
 export const commands = Object.freeze({
   up: upDir,
@@ -17,6 +16,8 @@ export const commands = Object.freeze({
   mv: args => moveFile(...args),
   os: args => getOsParams(...args),
   hash: args => getHash(...args),
+  compress: args => compress(...args),
+  decompress: args => decompress(...args),
 })
 
 export const osData = Object.freeze({

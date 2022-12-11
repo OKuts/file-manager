@@ -1,7 +1,7 @@
-import {homedir} from 'os'
 import  readline from 'readline'
 import { manager } from './src/manager.js'
-import {getUser, getColorText, outFlag, outCurrentlyDir, setDir} from './src/utils/index.js'
+import { getUser, getColorText, outFlag } from './src/utils/index.js'
+import { setDir } from './src/commands/index.js'
 
 const rl = readline.createInterface({
   input: process.stdin,
